@@ -22,7 +22,12 @@ public class VerticalProgressBar extends ProgressBar {
 	public VerticalProgressBar(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
-
+	
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(h, w, oldh, oldw);
+	}
+	
 	@Override
 	protected synchronized void onDraw(Canvas canvas) {
 		// 旋转
